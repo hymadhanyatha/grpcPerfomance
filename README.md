@@ -75,3 +75,8 @@ To implement gRPC, first we need to define ProtoBuffer and then we should genera
 
 The whole application is on gradle build. But this proto buffer code is in maven. Some how I couldn’t generate jar using gradle plugin, I could do it in maven and installed the dependency in my local repo. This is added as dependency to other services.
 
+
+
+curl localhost:8080/api/rest/unary/user/1000
+curl localhost:8080/api/grpc/unary/user/1000
+curl localhost:8080/api/grpc/stream/user/1000
