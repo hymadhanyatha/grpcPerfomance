@@ -80,3 +80,10 @@ The whole application is on gradle build. But this proto buffer code is in maven
 curl localhost:8080/api/rest/unary/user/1000
 curl localhost:8080/api/grpc/unary/user/1000
 curl localhost:8080/api/grpc/stream/user/1000
+
+install apache bench tool and run stress test
+ab -n 100 localhost:8080/api/rest/unary/user/1000
+ab -n 100 localhost:8080/api/grpc/unary/user/1000
+ab -n 100 localhost:8080/api/grpc/stream/user/1000
+
+check performace yourself
