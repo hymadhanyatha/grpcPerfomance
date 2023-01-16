@@ -1,0 +1,16 @@
+version: '3'
+services:
+  grpc-api:
+    build: ./grpc-api
+    image: eresh.gorantla/grpc-api
+  rest-api:
+    build: ./rest-api
+    image: eresh.gorantla/rest-api
+  grpc-client:
+    build: ./grpc-client
+    image: eresh.gorantla/grpc-client
+    ports:
+      - 8080:8080
+    environment:
+      - GRPC_CLIENT_USERDETAILSSERVICE_ADDRESS=static://grpc-api:9002
+      - REST_USERDETAILSSERVICE_SERVICE_ENDPOINT=http://rest-api:9001
